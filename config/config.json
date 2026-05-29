@@ -1,0 +1,48 @@
+{
+  "dataset": {
+    "num_samples": 500,
+    "output_path": "data/dataset.csv",
+    "random_seed": 42
+  },
+  "features": {
+    "speed": {
+      "min": 0,
+      "max": 25
+    },
+    "distance": {
+      "min": 0,
+      "max": 15
+    },
+    "lane_offset": {
+      "min": 0,
+      "max": 2.5
+    },
+    "weather_risk": {
+        "min": 0,
+        "max": 0.8
+    },
+    "road_curvature": {
+        "min": 0,
+        "max": 0.8
+    }
+  },
+  "rule": {
+    "initial_rule": "distance >= 2.2 AND lane_offset <= 1.5 AND weather_risk <= 0.7"
+  },
+"ollama": {
+  "url": "http://localhost:11434/api/generate",
+  "model": "llama3.2:3b",
+  "max_iterations": 5,
+  "temperature": 0,
+  "use_fallback": true
+},
+"openai_api": {
+  "enabled": true,
+  "base_url": "https://api.gapgpt.app/v1",
+  "api_key": "sk-lCZCDjxgughRLfdvbh4DAr7v2UuwzTbyJyfENbc3LUdD0UcY",
+  "model": "gpt-4o"
+},
+  "validation": {
+    "min_decided_cases": 80
+  }
+}

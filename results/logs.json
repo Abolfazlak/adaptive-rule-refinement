@@ -1,0 +1,40 @@
+{
+  "config_path": "config/config.json",
+  "original_rule": "distance >= 2.2 AND lane_offset <= 1.5 AND weather_risk <= 0.7",
+  "mined_patterns": [
+    {
+      "name": "high_speed_low_distance",
+      "condition": "speed > 14 AND distance < 5",
+      "support": 27,
+      "description": "Unsafe behavior caused by high speed combined with insufficient distance."
+    },
+    {
+      "name": "weather_risk_low_distance",
+      "condition": "weather_risk > 0.6 AND distance < 6",
+      "support": 10,
+      "description": "Unsafe behavior caused by risky weather and insufficient distance."
+    }
+  ],
+  "initial_inconsistencies": 35,
+  "counterfactuals_count": 35,
+  "iterations": [
+    {
+      "iteration": 1,
+      "proposed_rule": "distance >= 2.2 AND lane_offset <= 1.5 AND weather_risk <= 0.7 AND NOT (speed > 14 AND distance < 5) AND NOT (weather_risk > 0.6 AND distance < 6)",
+      "validation": {
+        "valid": true,
+        "errors": [],
+        "metrics": {
+          "decided": 196,
+          "mismatches": 0,
+          "invalid": 0,
+          "accuracy": 1.0
+        }
+      },
+      "feedback_used": null,
+      "source": "llm"
+    }
+  ],
+  "accepted_rule": "distance >= 2.2 AND lane_offset <= 1.5 AND weather_risk <= 0.7 AND NOT (speed > 14 AND distance < 5) AND NOT (weather_risk > 0.6 AND distance < 6)",
+  "accepted_by": "llm"
+}
