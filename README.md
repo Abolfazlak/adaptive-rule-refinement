@@ -26,25 +26,7 @@ into a reliable adaptive refinement framework.
 
 ## Architecture
 
-```text
-Dataset Generator
-        ↓
-Rule Evaluator
-        ↓
-Inconsistency Detector
-        ↓
-Counterfactual Generator
-        ↓
-Pattern Miner
-        ↓
-LLM Refiner
-        ↓
-Rule Sanitizer
-        ↓
-Rule Validator
-        ↓
-Accepted Refined Rule
-```
+<img width="690" height="339" alt="image" src="https://github.com/user-attachments/assets/4da35524-2930-469e-b0cb-72b9c0f20174" />
 
 ---
 
